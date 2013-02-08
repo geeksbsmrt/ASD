@@ -13,7 +13,7 @@ $('#home').on('pageinit', function () {
 			$.mobile.changePage('#details')
 		},
 		loadYAML = function () {
-			YAML.fromURL("yaml/matches.yml", function(data) {
+			YAML.fromURL("yaml/matches.js", function(data) {
 				var errors = YAML.getErrors();
 				if(errors.length == 0) {
 					console.log("No YAML Errors");
