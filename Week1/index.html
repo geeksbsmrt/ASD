@@ -15,19 +15,154 @@
 	<meta http-equiv="cleartype" content="on">
 	
 	<!-- CSS -->
+	<link type="text/css" rel="stylesheet" href="css/jquery.mobile-1.3.0-rc.1.min.css" />
 	<link type="text/css" rel="stylesheet" href="css/styles.css" />
-	<link type="text/css" rel="stylesheet" href="css/jquery.mobile-1.2.0.min.css" />
 	<!-- JQuery, JQM, Modernizr -->
-	<script src="js/libs/modernizr.custom.min.js"></script>
-	<script src="js/libs/jquery-1.9.0.min.js"></script>
-	<script src="js/libs/jquery.mobile-1.2.0.min.js"></script>
-
+	<script type="text/javascript" src="js/libs/modernizr.custom.min.js"></script>
 </head>
 <body>
-
-	
-
-	<!-- Custom JS -->
-	<script src="js/main.js"></script>
+	<!-- Home -->
+	<section data-role="page" id="home">
+		<!-- Header -->
+		<div data-role="header">
+			<h1>Soccer Scheduler</h1>
+		</div>	
+		<!-- / Header -->
+		<!-- Body -->
+		<div data-role="content">
+			<h2>Simple Soccer Scheduler</h2>
+			<p>Discover how easy it is!  Get started now</p>
+			<a href="#add" data-role="button" id="addbtn">Add a Match</a>
+			<div>
+				<ul data-role="listview" id="schedule" data-filter="true" data-inset="true" data-filter-placeholder="Filter Matches...">
+					<li>Schedule is empty</li>
+				</ul>
+			</div>
+			<a href="#" data-role="button" id="json" data-theme="e">Load JSON Data</a>
+			<a href="#" data-role="button" id="xml" data-theme="b">Load XML Data</a>
+			<a href="#" data-role="button" id="yaml" data-theme="a">Load YAML Data</a>
+		</div>
+		<!-- / Body -->
+		<!-- Footer -->
+		<div data-role="footer" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#home" class="ui-btn-active ui-state-persist">Home</a></li>
+					<li><a href="#login" data-rel="dialog" data-transition="pop">Login</a></li>
+					<li><a href="#settings">Settings</a></li>
+				</ul>
+			</div><!-- /navbar -->
+		</div>
+		<!-- / Footer -->
+	</section>
+	<!-- / Home -->
+	<!-- Add -->
+	<section data-role="page" id="add">
+		<!-- Header -->
+		<div data-role="header">
+			<h1>Add a Match</h1>
+		</div>	
+		<!-- / Header -->
+		<!-- Body -->
+		<div data-role="content">
+			<h2>Page Not Found</h2>
+			<p>This page is currently under construction.  Please check back later</p>
+			<a href="#home" data-role="button">Home</a>
+		</div>
+		<!-- / Body -->
+		<!-- Footer -->
+		<div data-role="footer" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#home">Home</a></li>
+					<li><a href="#login" data-rel="dialog" data-transition="pop">Login</a></li>
+					<li><a href="#settings">Settings</a></li>
+				</ul>
+			</div><!-- /navbar -->
+		</div>
+		<!-- / Footer -->
+	</section>
+	<!-- / Add -->
+	<!-- Details -->
+	<section data-role="page" id="details">
+	<!-- Header -->
+		<div data-role="header">
+			<h1>Match Details</h1>
+		</div>	
+		<!-- / Header -->
+		<!-- Body -->
+		<div data-role="content">
+			<h2>Page Under Construction</h2>
+			<p>When complete, this page will contain full details about the selected match plus links to edit and delete.</p>
+			<a href="#home" data-role="button">Home</a>
+		</div>
+		<!-- / Body -->
+		<!-- Footer -->
+		<div data-role="footer" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#home">Home</a></li>
+					<li><a href="#login" data-rel="dialog" data-transition="pop">Login</a></li>
+					<li><a href="#settings">Settings</a></li>
+				</ul>
+			</div><!-- /navbar -->
+		</div>
+		<!-- / Footer -->
+	</section>
+	<!-- / Details -->
+	<!-- Login -->
+	<section data-role="page" id="login">
+	<!-- Header -->
+		<div data-role="header">
+			<h1>Login</h1>
+		</div>	
+		<!-- / Header -->
+		<!-- Body -->
+		<div data-role="content">
+			<h2>Page Not Found</h2>
+			<p>This page is currently under construction.  Please check back later</p>
+			<a href="#home" data-role="button">Home</a>
+		</div>
+		<!-- / Body -->
+		<!-- Footer -->
+		<!-- Footer left BLANK intentionally -->
+		<!-- / Footer -->
+	</section>
+	<!-- / Login -->
+	<!-- Settings -->
+	<section data-role="page" id="settings">
+	<!-- Header -->
+		<div data-role="header">
+			<h1>Settings</h1>
+		</div>	
+		<!-- / Header -->
+		<!-- Body -->
+		<div data-role="content">
+			<h2>Page Not Found</h2>
+			<p>This page is currently under construction.  Please check back later</p>
+			<a href="#home" data-role="button">Home</a>
+		</div>
+		<!-- / Body -->
+		<!-- Footer -->
+		<div data-role="footer" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#home">Home</a></li>
+					<li><a href="#login" data-rel="dialog" data-transition="pop">Login</a></li>
+					<li><a href="#settings" class="ui-btn-active ui-state-persist">Settings</a></li>
+				</ul>
+			</div><!-- /navbar -->
+		</div>
+		<!-- / Footer -->
+	</section>
+	<!-- / Settings -->
+	<!-- JS -->
+	<script type="text/javascript" src="js/libs/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="js/libs/jquery.mobile-1.3.0-rc.1.min.js"></script>
+	<script type="text/javascript" src="js/libs/jkl-parsexml.js"></script>
+	<script type="text/javascript" src="js/libs/yaml.js"></script>
+	<script type="text/javascript" src="yaml/matches.js"></script>
+	<script type="text/javascript" src="js/json.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
