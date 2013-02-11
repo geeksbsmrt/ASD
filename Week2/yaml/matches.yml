@@ -1,0 +1,66 @@
+
+    match1: 
+      gDate: 
+        - "Game Date: "
+        - "2012-10-27"
+      gTime: 
+        - "Game Time: "
+        - "08:00"
+      gField: 
+        - "Game Field: "
+        - "1A"
+      gAge: 
+        - "Age Group: "
+        - "U12"
+      gGender: 
+        - "Gender: "
+        - "Boys"
+      gComp: 
+        - "Is Competitive: "
+        - true
+      gHome: 
+        - "Home Team: "
+        - "LFC"
+      gAway: 
+        - "Away Team: "
+        - "TBU"
+      gComments: 
+        - "Comments: "
+        - "None"
+      ref: 
+        - "Referee: "
+        - "Adam C."
+      refGrd: 
+        - "Grade: "
+        - 8
+      refYrs: 
+        - "Years Reffing: "
+        - 10
+      refEml: 
+        - "E-Mail: "
+        - "adam@test.com"
+      ar1: 
+        - "AR 1: "
+        - "Matthew C."
+      ar1Grd: 
+        - "Grade: "
+        - 8
+      ar1Yrs: 
+        - "Years Reffing: "
+        - 10
+      ar1Eml: 
+        - "E-Mail: "
+        - "matt@test.com"
+      ar2: 
+        - "AR 2: "
+        - "Bill C."
+      ar2Grd: 
+        - "Grade: "
+        - 8
+      ar2Yrs: 
+        - "Years Reffing: "
+        - 10
+      ar2Eml: 
+        - "E-Mail: "
+        - "bill@test.com"
+    

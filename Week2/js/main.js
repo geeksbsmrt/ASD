@@ -1,8 +1,9 @@
 // Adam Crawford
-// ASD 0113 Week 1
+// ASD 0213 Week 2
 
 $('#home').on('pageinit', function () {
 	var loadJSON = function () {
+		localStorage.clear();
 		$.each(json, function (index, match) {
 	        var guid = Math.floor(Math.random() * 100001),
 	         	data = JSON.stringify(match);
@@ -13,24 +14,24 @@ $('#home').on('pageinit', function () {
 			$.mobile.changePage('#details')
 		},
 		loadYAML = function () {
-			YAML.fromURL("yaml/matches.yml", function(data) {
-				var errors = YAML.getErrors();
-				if(errors.length == 0) {
-					console.log("No YAML Errors");
-				} else {
-					console.log("Found errors");
-				};
+			localStorage.clear();
+			var url="yaml/matches.yml"
+			YAML.fromURL(url, function(result) {
+				console.log(result);
 			});
 		},
 		loadXML = function () {
+			localStorage.clear();
 			var url = "xml/matches.xml"
 				xml = new JKL.ParseXML(url),
 				data = xml.parse();
 			console.log(data);
-			// root.find("match").each(function(){
-			// 	var game = $(this);
-			// 	console.log("Game: ", match.find("gHome"))
-			// })
+			$.each(data.root.match, function (index, match) {
+				console.log(match);
+				var guid = Math.floor(Math.random() * 100001),
+	         	data = JSON.stringify(match);
+	        	localStorage.setItem(guid, data);
+			});
 		};
 	localStorage.clear();
 	$('#json').on('click', function(){
@@ -59,5 +60,18 @@ $('#home').on('pageinit', function () {
 		console.log("loadXML clicked");
 		$('#schedule').empty();
 		loadXML();
+		for (var i= 0, j=localStorage.length; i<j ; i++){
+            var key = localStorage.key(i),
+            	match = JSON.parse(localStorage.getItem(key));
+            var makeSubList = $("<li></li>");
+            var makeSubLi = $( "<h3>"+match.gDate.element[1]+ " " +match.gTime.element[1].toString()+"</h3>"+
+                "<p><strong>"+match.gHome.element[1]+"</strong></p>"+
+                "<p>vs.</p>" +
+                "<p><strong>"+match.gAway.element[1]+"</strong></p>" );
+            var makeLink = $("<a href='#details' id='"+key+"'>Show Details</a>");
+            makeLink.html(makeSubLi);
+            makeSubList.append(makeLink).appendTo("#schedule");
+        };
+        $("#schedule").listview('refresh');
 	})
 })
